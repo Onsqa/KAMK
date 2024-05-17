@@ -1,8 +1,12 @@
 #!/bin/sh
-echo "Alotetaan äsquuällän backuppia"
+
+echo "Alotetaan tietokannan varmuuskopiointi"
+
 DATE=$(date +"%d-%b-%Y")
+
 dbname=sqlname
-name=$dbname-${DATE}.sql
+name=${dbname}-${DATE}.sql
+
 sudo mysqldump -usqlacc --no-tablespaces sqlname >/home/sqlb/${name}
 
-echo "Äsquuällä backupattu"
+echo "Tietokannan varmuuskopio suoritettu onnistuneesti"
